@@ -13,6 +13,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@google-cloud/cloud-sql-connector": "^1.4.0",
     "@google-cloud/sql": "^0.2.0",
     "@google-cloud/storage": "^7.7.0",
     "bcryptjs": "^2.4.3",
