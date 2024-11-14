@@ -1,14 +1,12 @@
-import express from "express";
-import bodyParser from "body-parser";
-import sequelize  from "./config/connection.js";
-import jwt from "jsonwebtoken";
-import session from "express-session";
-import dotenv from "dotenv";
-import cors from "cors";
+const express = require("express");
+const bodyParser = require("body-parser");
+const dotenv = require("dotenv");
+const cors = require("cors");
+const auth = require('./routes/auth.js');
 
 dotenv.config();
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -16,6 +14,8 @@ app.use(bodyParser.json());
 app.get("/", (req, res) => {
     res.send("Hello World!");
 });
+
+app.use('/auth', auth);
 
 app.listen(port, () => {
     console.log(`App listening on port ${port}`);
