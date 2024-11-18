@@ -16,6 +16,7 @@ app.get("/", (req, res) => {
 });
 
 app.use('/auth', auth);
+app.use('/uploads', express.static('uploads'));
 
 app.listen(port, () => {
     console.log(`App listening on port ${port}`);
